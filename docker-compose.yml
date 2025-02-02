@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: flask_app
+    ports:
+      - "5000:5000"
+    environment:
+      - SECRET_KEY=supersecretkey
+      - MONGO_URI=mongodb+srv://shrinath:sanu2526@cluster0.nmbtf.mongodb.net/faq_db?retryWrites=true&w=majority
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+
+  redis:
+    image: redis:latest
+    container_name: redis_cache
+    ports:
+      - "6379:6379"

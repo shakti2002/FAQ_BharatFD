@@ -1,0 +1,26 @@
+# Python specific
+*.pyc
+*.pyo
+__pycache__/
+env/
+venv/
+*.env
+*.sqlite3
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Cache
+*.pot
+*.pyc
+*.pyo
+
+# IDEs
+.vscode/
+.idea/
+
+# Flask related
+instance/
